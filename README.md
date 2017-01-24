@@ -31,17 +31,17 @@ Instructions to use in your own AppDelegate and View Controllers.
   ```
 3. Implement delegate method
 
-```
-func timeUpdated(totalSeconds: Int) {
+  ```
+  func timeUpdated(totalSeconds: Int) {
 		exampleEntity.timeElapsed = Int64(totalSeconds)
 		cdh.save()
 		timeLabel.text = totalSeconds.timeDisplay()
 	}
-```
+  ```
 4. Connect Action
 
-```
-@IBAction func startStopButtonTapped(_ sender: Any) {
+  ```
+  @IBAction func startStopButtonTapped(_ sender: Any) {
 		if timerController.timerGoing {
 			startStopButton.setTitle("S T A R T", for: .normal)
 			timerController.stopTime()
