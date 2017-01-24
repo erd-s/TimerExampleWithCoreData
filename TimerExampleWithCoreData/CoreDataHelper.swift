@@ -17,7 +17,7 @@ class CoreDataHelper {
 	
 	
 	init(shouldLog: Bool) {
-		if shouldLog { loggingRequested = true } else { loggingRequested = false }
+		loggingRequested = shouldLog
 		moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	}
 	

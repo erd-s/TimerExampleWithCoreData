@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 		
 		timerController = (UIApplication.shared.delegate as! AppDelegate).timerController
-		timerController.vcDelegate = self
+		timerController.delegate = self
 		createOrLoadEntity()
     }
 	

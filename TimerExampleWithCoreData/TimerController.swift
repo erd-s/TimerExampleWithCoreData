@@ -16,17 +16,20 @@ protocol TimerControllerDelegate {
 class TimerController {
 	var totalSeconds = 0
 	var timerGoing = false
-	var vcDelegate: TimerControllerDelegate!
+	var delegate: TimerControllerDelegate!
 	var timer: Timer!
 	var loggingRequested = false
 	var cdh: CoreDataHelper!
+	
 	
 	init(shouldLog: Bool) {
 		loggingRequested = shouldLog
 		cdh = CoreDataHelper(shouldLog: false)
 	}
 	
-	
+	/**
+	Reinitializes the timer and fires, if this method is being called, the timer would have been nil or invalidated.
+	*/
 	func startTime() {
 		if !timerGoing {
 			timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.addSeconds() })
@@ -34,9 +37,11 @@ class TimerController {
 			timerGoing = true
 			if loggingRequested { print("timer starting") }
 		}
-		
 	}
 	
+	/**
+	Stops the timer and invalidates it.
+	*/
 	func stopTime() {
 		if timerGoing {
 		timer.invalidate()
@@ -46,6 +51,10 @@ class TimerController {
 		}
 	}
 	
+	/**
+	This is what keeps time while the app is not running. It adds time elapsed while
+	away to the core data entity and to this class's `totalSeconds` then fires the timer.
+	*/
 	func bankSecondsFrom(refDate: Date) {
 		let timeElapsed = Date().timeIntervalSince(refDate)
 		
@@ -57,12 +66,18 @@ class TimerController {
 		startTime()
 	}
 	
+	/**
+	adds a second to `totalSeconds` and calls `delegate.timeUpdated` func.
+	*/
 	func addSeconds() {
 		totalSeconds += 1
 		if loggingRequested { print("adding seconds, total:", totalSeconds) }
-		if (vcDelegate != nil) { vcDelegate.timeUpdated(totalSeconds: totalSeconds) }
+		if (delegate != nil) { delegate.timeUpdated(totalSeconds: totalSeconds) }
 	}
 	
+	/**
+	Sets the reference date when the app disappears and invalidates the timer.
+	*/
 	func updateTimerForAppDisappear() {
 		if loggingRequested { print("app disappearing") }
 		if timerGoing {
@@ -71,10 +86,13 @@ class TimerController {
 				cdh.save()
 			}
 			stopTime()
-			timer.invalidate()
 		}
 	}
 	
+	/**
+	When the app becomes active again call this function. It banks the time elapsed
+	and fires the timer.
+	*/
 	func updateTimerForAppReappear(force: Bool) {
 		if loggingRequested { print("app reappearing. timer going = ", timerGoing) }
 		

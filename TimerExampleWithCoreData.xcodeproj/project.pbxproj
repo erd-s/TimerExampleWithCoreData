@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				9B05A1351E37B849008BB2CF /* AppDelegate.swift */,
-				9B05A16D1E37C452008BB2CF /* Extensions */,
+				9B05A16D1E37C452008BB2CF /* Controllers & Extensions */,
 				9B05A15E1E37BB51008BB2CF /* Core Data */,
 				9B05A1661E37BCF7008BB2CF /* View Controllers */,
 				9B05A1651E37BCE0008BB2CF /* Assets, Launch, Info.plist */,
@@ -86,7 +86,6 @@
 				9B05A1711E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift */,
 				9B05A13C1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld */,
 				9B05A1631E37BC2F008BB2CF /* CoreDataHelper.swift */,
-				9B05A1671E37C1F7008BB2CF /* TimerController.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -110,14 +109,15 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		9B05A16D1E37C452008BB2CF /* Extensions */ = {
+		9B05A16D1E37C452008BB2CF /* Controllers & Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9B05A16E1E37C4E0008BB2CF /* Int + Extension.swift */,
 				9B05A1691E37C33E008BB2CF /* Date + TimerExtension.swift */,
 				9B05A16B1E37C359008BB2CF /* String + TimerExtension.swift */,
+				9B05A1671E37C1F7008BB2CF /* TimerController.swift */,
 			);
-			name = Extensions;
+			name = "Controllers & Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
