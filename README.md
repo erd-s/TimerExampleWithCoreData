@@ -4,11 +4,11 @@ Instructions to use in your own AppDelegate and View Controllers.
 
 ### AppDelegate
 1. **Initialize TimerController and CoreDataHelper in didFinishLaunching.**
-2. **Call `timerController.updateTimerForAppDisappear()` in the following:**
+2. **Call **`timerController.updateTimerForAppDisappear()`** in the following:**
   1. willResignActive
   2. didEnterBackground
   3. willTerminate
-3. **Call `timerController.updateTimerForAppReappear(force: false)` in willEnterForeground**
+3. **Call **`timerController.updateTimerForAppReappear(force: false)`** in willEnterForeground**
 4. **Call** `timerController.updateTimerForAppReappear(force: true)` **in didBecomeActive. In didBecomeActive I'm using a** `justLaunched` **Bool to make sure this is not called when the app first launched.**
   ex: 
    
