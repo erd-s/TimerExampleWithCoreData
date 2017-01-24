@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 	//--------------------------------------
 	let cdh = CoreDataHelper(shouldLog: true)
 	var exampleEntity: ExampleEntity!
+	var timerController = TimerController()
 	
 	
 	//--------------------------------------

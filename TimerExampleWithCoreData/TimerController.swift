@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
+protocol TimerControllerDelegate {
+	func timeUpdated(totalSeconds: Int)
+}
 
 class TimerController {
 	var totalSeconds = 0
+	var timerGoing = false
+	var delegate: TimerControllerDelegate!
 	
 	
 	
@@ -21,9 +26,9 @@ class TimerController {
 		
 	}
 	
-	func addSeconds() -> Int {
+	func addSeconds() {
 		totalSeconds += 1
 		
-		return totalSeconds
+		if (delegate != nil) { delegate.timeUpdated(totalSeconds: totalSeconds) }
 	}
 }
