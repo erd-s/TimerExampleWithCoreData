@@ -8,22 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		9B05A1361E37B849008BB2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1351E37B849008BB2CF /* AppDelegate.swift */; };
-		9B05A1381E37B849008BB2CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1371E37B849008BB2CF /* ViewController.swift */; };
 		9B05A13B1E37B849008BB2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B05A1391E37B849008BB2CF /* Main.storyboard */; };
 		9B05A13E1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A13C1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld */; };
 		9B05A1401E37B849008BB2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B05A13F1E37B849008BB2CF /* Assets.xcassets */; };
 		9B05A1431E37B849008BB2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B05A1411E37B849008BB2CF /* LaunchScreen.storyboard */; };
+		9B05A1591E37BB1C008BB2CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1581E37BB1C008BB2CF /* HomeViewController.swift */; };
+		9B05A1641E37BC2F008BB2CF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1631E37BC2F008BB2CF /* CoreDataHelper.swift */; };
+		9B05A1681E37C1F7008BB2CF /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1671E37C1F7008BB2CF /* TimerController.swift */; };
+		9B05A16A1E37C33E008BB2CF /* Date + TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1691E37C33E008BB2CF /* Date + TimerExtension.swift */; };
+		9B05A16C1E37C359008BB2CF /* String + TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A16B1E37C359008BB2CF /* String + TimerExtension.swift */; };
+		9B05A16F1E37C4E0008BB2CF /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A16E1E37C4E0008BB2CF /* Int + Extension.swift */; };
+		9B05A1721E37CF5E008BB2CF /* ExampleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1701E37CF5E008BB2CF /* ExampleEntity+CoreDataClass.swift */; };
+		9B05A1731E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B05A1711E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B05A1321E37B849008BB2CF /* TimerExampleWithCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerExampleWithCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B05A1351E37B849008BB2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B05A1371E37B849008BB2CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B05A13A1E37B849008BB2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B05A13D1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerExampleWithCoreData.xcdatamodel; sourceTree = "<group>"; };
 		9B05A13F1E37B849008BB2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B05A1421E37B849008BB2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B05A1441E37B849008BB2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B05A1581E37BB1C008BB2CF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B05A1631E37BC2F008BB2CF /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		9B05A1671E37C1F7008BB2CF /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		9B05A1691E37C33E008BB2CF /* Date + TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + TimerExtension.swift"; sourceTree = "<group>"; };
+		9B05A16B1E37C359008BB2CF /* String + TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + TimerExtension.swift"; sourceTree = "<group>"; };
+		9B05A16E1E37C4E0008BB2CF /* Int + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
+		9B05A1701E37CF5E008BB2CF /* ExampleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExampleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B05A1711E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExampleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +71,53 @@
 			isa = PBXGroup;
 			children = (
 				9B05A1351E37B849008BB2CF /* AppDelegate.swift */,
-				9B05A1371E37B849008BB2CF /* ViewController.swift */,
-				9B05A1391E37B849008BB2CF /* Main.storyboard */,
+				9B05A16D1E37C452008BB2CF /* Controllers & Extensions */,
+				9B05A15E1E37BB51008BB2CF /* Core Data */,
+				9B05A1661E37BCF7008BB2CF /* View Controllers */,
+				9B05A1651E37BCE0008BB2CF /* Assets, Launch, Info.plist */,
+			);
+			path = TimerExampleWithCoreData;
+			sourceTree = "<group>";
+		};
+		9B05A15E1E37BB51008BB2CF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B05A1701E37CF5E008BB2CF /* ExampleEntity+CoreDataClass.swift */,
+				9B05A1711E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift */,
+				9B05A13C1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld */,
+				9B05A1631E37BC2F008BB2CF /* CoreDataHelper.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		9B05A1651E37BCE0008BB2CF /* Assets, Launch, Info.plist */ = {
+			isa = PBXGroup;
+			children = (
 				9B05A13F1E37B849008BB2CF /* Assets.xcassets */,
 				9B05A1411E37B849008BB2CF /* LaunchScreen.storyboard */,
 				9B05A1441E37B849008BB2CF /* Info.plist */,
-				9B05A13C1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld */,
 			);
-			path = TimerExampleWithCoreData;
+			name = "Assets, Launch, Info.plist";
+			sourceTree = "<group>";
+		};
+		9B05A1661E37BCF7008BB2CF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B05A1581E37BB1C008BB2CF /* HomeViewController.swift */,
+				9B05A1391E37B849008BB2CF /* Main.storyboard */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9B05A16D1E37C452008BB2CF /* Controllers & Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B05A16E1E37C4E0008BB2CF /* Int + Extension.swift */,
+				9B05A1691E37C33E008BB2CF /* Date + TimerExtension.swift */,
+				9B05A16B1E37C359008BB2CF /* String + TimerExtension.swift */,
+				9B05A1671E37C1F7008BB2CF /* TimerController.swift */,
+			);
+			name = "Controllers & Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B05A1381E37B849008BB2CF /* ViewController.swift in Sources */,
+				9B05A1641E37BC2F008BB2CF /* CoreDataHelper.swift in Sources */,
+				9B05A16C1E37C359008BB2CF /* String + TimerExtension.swift in Sources */,
 				9B05A1361E37B849008BB2CF /* AppDelegate.swift in Sources */,
 				9B05A13E1E37B849008BB2CF /* TimerExampleWithCoreData.xcdatamodeld in Sources */,
+				9B05A1681E37C1F7008BB2CF /* TimerController.swift in Sources */,
+				9B05A1731E37CF5E008BB2CF /* ExampleEntity+CoreDataProperties.swift in Sources */,
+				9B05A16A1E37C33E008BB2CF /* Date + TimerExtension.swift in Sources */,
+				9B05A1721E37CF5E008BB2CF /* ExampleEntity+CoreDataClass.swift in Sources */,
+				9B05A16F1E37C4E0008BB2CF /* Int + Extension.swift in Sources */,
+				9B05A1591E37BB1C008BB2CF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +366,7 @@
 				9B05A1491E37B849008BB2CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
