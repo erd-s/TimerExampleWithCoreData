@@ -66,5 +66,5 @@ func timeUpdated(totalSeconds: Int) {
   1. You'll want to implement your own fetching according to your own queries. For the sake of this proof-of-concept, I'm just retrieving the first entity found and writing to it.
   2. You can turn off logging by changing shouldLog to false where CoreDataHelper is initialized.
 
-#### Timer Controller
+##### Timer Controller
   1. Same thing, you can turn off logging by changing shouldLog to false where TimerController is initialized **(should be AppDelegate)**.
