@@ -56,15 +56,15 @@ Instructions to use in your own AppDelegate and View Controllers.
   ```
   
 ### Notes
-##### Core Data
+#### Core Data
   1. Make sure your core data objects have these three variables:
     1. ref_date w/ type NSDate
     2. timeElapsed w/ type Int64
     3. timerGoing w/ type Boolean
     
-##### Core Data Helper
+#### Core Data Helper
   1. You'll want to implement your own fetching according to your own queries. For the sake of this proof-of-concept, I'm just retrieving the first entity found and writing to it.
   2. You can turn off logging by changing shouldLog to false where CoreDataHelper is initialized.
 
-##### Timer Controller
+#### Timer Controller
   1. Same thing, you can turn off logging by changing shouldLog to false where TimerController is initialized **(should be AppDelegate)**.
