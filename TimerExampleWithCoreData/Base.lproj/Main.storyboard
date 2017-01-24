@@ -39,8 +39,11 @@
                                     <constraint firstAttribute="height" constant="40" id="k5k-zz-Bnd"/>
                                 </constraints>
                                 <state key="normal" title="S T A R T">
-                                    <color key="titleColor" red="0.74463279179999997" green="0.74463279179999997" blue="0.74463279179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.87705155840000004" green="0.87705155840000004" blue="0.87705155840000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startStopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qD-yB-bgW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87705155837824933" green="0.87705155837824933" blue="0.87705155837824933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,6 +56,9 @@
                             <constraint firstItem="hSy-Cw-1EU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="evf-iL-mxf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="49p-Sl-7ul" id="Cmz-3P-DVF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
