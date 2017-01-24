@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
 	//--------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+		timerController.vcDelegate = self
     }
 	
 	//--------------------------------------
@@ -48,13 +49,18 @@ class HomeViewController: UIViewController {
 	// MARK: - Timer Start/Stop
 	//--------------------------------------
 	@IBAction func startStopButtonTapped(_ sender: Any) {
-		
+		timerController.timerGoing ? timerController.stopTime() : timerController.startTime()
 	}
-	
-	func addSecond() {
-		
-	}
+}
 
+
+
+extension HomeViewController: TimerControllerDelegate {
+	func timeUpdated(totalSeconds: Int) {
+		exampleEntity.timeElapsed = Int64(totalSeconds)
+		cdh.save()
+		timeLabel.text = totalSeconds.timeDisplay()
+	}
 }
 
 
