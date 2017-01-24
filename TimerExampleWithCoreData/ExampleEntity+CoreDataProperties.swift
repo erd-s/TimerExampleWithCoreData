@@ -11,12 +11,12 @@ import CoreData
 
 
 extension ExampleEntity {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ExampleEntity> {
         return NSFetchRequest<ExampleEntity>(entityName: "ExampleEntity");
     }
 
     @NSManaged public var timeElapsed: Int64
     @NSManaged public var ref_date: NSDate?
+    @NSManaged public var timerGoing: Bool
 
 }

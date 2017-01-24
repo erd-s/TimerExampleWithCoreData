@@ -11,13 +11,14 @@ import UIKit
 import CoreData
 
 class CoreDataHelper {
-	let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	let moc: NSManagedObjectContext!
 	let entityName = "ExampleEntity"
 	var loggingRequested = false
 	
 	
 	init(shouldLog: Bool) {
 		if shouldLog { loggingRequested = true } else { loggingRequested = false }
+		moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	}
 	
 	
@@ -39,7 +40,10 @@ class CoreDataHelper {
 			}
 			*/
 			
-			if loggingRequested { print("retrieved entity from moc") }
+			if loggingRequested {
+				print("retrieved entity from moc")
+				print(entities!.first!)
+			}
 			if entities!.count > 0 { return entities!.first } else { return nil }
 		} else {
 			if loggingRequested { print("could not retrieve entity from moc") }
@@ -64,7 +68,6 @@ class CoreDataHelper {
 	*/
 	func save() {
 		if moc.hasChanges {
-			if loggingRequested { print("saving moc") }
 			try! moc.save()
 		}
 	}

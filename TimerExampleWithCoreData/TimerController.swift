@@ -18,30 +18,76 @@ class TimerController {
 	var timerGoing = false
 	var vcDelegate: TimerControllerDelegate!
 	var timer: Timer!
+	var loggingRequested = false
+	var cdh: CoreDataHelper!
 	
-	init() {
-		timer = Timer(timeInterval: 1, repeats: true, block: { _ in self.addSeconds() })
+	init(shouldLog: Bool) {
+		loggingRequested = shouldLog
+		cdh = CoreDataHelper(shouldLog: false)
 	}
 	
 	
 	func startTime() {
-		timer.fire()
+		if !timerGoing {
+			timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.addSeconds() })
+			timer.fire()
+			timerGoing = true
+			if loggingRequested { print("timer starting") }
+		}
+		
 	}
 	
 	func stopTime() {
+		if timerGoing {
 		timer.invalidate()
+		timerGoing = false
+			
+		if loggingRequested { print("timer stopping") }
+		}
 	}
 	
 	func bankSecondsFrom(refDate: Date) {
-		let timeElapsed = refDate.timeIntervalSince(Date())
+		let timeElapsed = Date().timeIntervalSince(refDate)
 		
 		totalSeconds += Int(timeElapsed)
-		if (vcDelegate != nil) { vcDelegate.timeUpdated(totalSeconds: totalSeconds) }
+		cdh.getEntity()?.timeElapsed += Int64(timeElapsed)
+		cdh.save()
+		if loggingRequested { print("banking seconds: ", Int64(timeElapsed)) }
+
+		startTime()
 	}
 	
 	func addSeconds() {
 		totalSeconds += 1
-		
+		if loggingRequested { print("adding seconds, total:", totalSeconds) }
 		if (vcDelegate != nil) { vcDelegate.timeUpdated(totalSeconds: totalSeconds) }
+	}
+	
+	func updateTimerForAppDisappear() {
+		if loggingRequested { print("app disappearing") }
+		if timerGoing {
+			if let entity = cdh.getEntity() {
+				entity.ref_date = NSDate()
+				cdh.save()
+			}
+			stopTime()
+			timer.invalidate()
+		}
+	}
+	
+	func updateTimerForAppReappear(force: Bool) {
+		if loggingRequested { print("app reappearing. timer going = ", timerGoing) }
+		
+		if timerGoing || force {
+			if let entity = cdh.getEntity() {
+				if let refDate = entity.ref_date as? Date {
+					bankSecondsFrom(refDate: refDate)
+				} else {
+					startTime()
+				}
+			} else {
+				startTime()
+			}
+		}
 	}
 }

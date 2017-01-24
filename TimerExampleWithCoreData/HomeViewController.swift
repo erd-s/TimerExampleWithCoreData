@@ -15,14 +15,14 @@ class HomeViewController: UIViewController {
 	//--------------------------------------
 	let cdh = CoreDataHelper(shouldLog: true)
 	var exampleEntity: ExampleEntity!
-	var timerController = TimerController()
+	var timerController: TimerController!
 	
 	
 	//--------------------------------------
 	// MARK: - Outlets
 	//--------------------------------------
 	@IBOutlet weak var timeLabel: UILabel!
-	
+	@IBOutlet weak var startStopButton: UIButton!
 	
 	
 	//--------------------------------------
@@ -30,7 +30,10 @@ class HomeViewController: UIViewController {
 	//--------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		timerController = (UIApplication.shared.delegate as! AppDelegate).timerController
 		timerController.vcDelegate = self
+		createOrLoadEntity()
     }
 	
 	//--------------------------------------
@@ -42,6 +45,20 @@ class HomeViewController: UIViewController {
 		} else {
 			exampleEntity = cdh.createEntity()
 		}
+		timeLabel.text = Int(exampleEntity.timeElapsed).timeDisplay()
+		timerController.totalSeconds += Int(exampleEntity.timeElapsed)
+		
+		if exampleEntity.timerGoing {
+			if let refDate = exampleEntity.ref_date as? Date {
+				print("got ref date:", refDate)
+				timerController.bankSecondsFrom(refDate: refDate)
+			} else {
+				print("no ref date")
+				timerController.startTime()
+			}
+			
+			startStopButton.setTitle("S T O P", for: .normal)
+		}
 	}
 	
 	
@@ -49,11 +66,18 @@ class HomeViewController: UIViewController {
 	// MARK: - Timer Start/Stop
 	//--------------------------------------
 	@IBAction func startStopButtonTapped(_ sender: Any) {
-		timerController.timerGoing ? timerController.stopTime() : timerController.startTime()
+		if timerController.timerGoing {
+			startStopButton.setTitle("S T A R T", for: .normal)
+			timerController.stopTime()
+			exampleEntity.timerGoing = false
+		} else {
+			startStopButton.setTitle("S T O P", for: .normal)
+			timerController.startTime()
+			exampleEntity.timerGoing = true
+		}
+		cdh.save()
 	}
 }
-
-
 
 extension HomeViewController: TimerControllerDelegate {
 	func timeUpdated(totalSeconds: Int) {
