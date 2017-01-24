@@ -42,7 +42,7 @@ class CoreDataHelper {
 			
 			if loggingRequested {
 				print("retrieved entity from moc")
-				print(entities!.first!)
+				print(entities!.first ?? "no entity found yet")
 			}
 			if entities!.count > 0 { return entities!.first } else { return nil }
 		} else {
